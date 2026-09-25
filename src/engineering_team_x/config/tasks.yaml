@@ -1,0 +1,10 @@
+design_task:
+  description: >
+    Take the high level requirements described here and prepare a detailed design for the engineer:
+    everything should be in diffrent python module for specific to each task, but outline the classes and methods in the module.
+    Here are the requirements: {requirements}
+    IMPORTANT: Only output the design in markdown format, laying out in detail the classes and functions in the module.
+  expected_output: >
+    A structured ArchitecturePlan detailing all the necessary python modules, their classes, and their descriptions.
+  agent: engineering_lead
+  output_file: output/Architecture_Plan.json
