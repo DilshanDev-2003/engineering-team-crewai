@@ -1,54 +1,36 @@
-# EngineeringTeamX Crew
+# 🤖 CrewAI Engineering Team
 
-Welcome to the EngineeringTeamX Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+An automated multi-agent software engineering team built with **CrewAI** 🚀 and powered by local LLMs via **Ollama** 𦙙. This project orchestrates multiple specialized AI agents to design, implement, test, and generate a user interface for Python applications.
 
-## Installation
+---
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## 🏗️ Architecture & Agents
 
-First, if you haven't already, install uv:
+The crew consists of four specialized AI agents working together:
 
-```bash
-pip install uv
-```
+1. **🏗️ Engineering Lead**: Analyzes requirements and drafts a structured `Architecture_Plan.json` outlining the required modules, classes, and methods.
+2. **💻 Backend Engineer**: Generates clean, modular Python backend code based on the architecture plan.
+3. **🧪 Test Engineer**: Writes unit tests for each generated backend module to ensure functionality.
+4. **🖼️ Frontend Engineer**: Constructs a single-file interactive **Gradio** web interface to demonstrate the backend module.
 
-Next, navigate to your project directory and install the dependencies:
+---
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+## 📁 Project Structure
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/engineering_team_x/config/agents.yaml` to define your agents
-- Modify `src/engineering_team_x/config/tasks.yaml` to define your tasks
-- Modify `src/engineering_team_x/crew.py` to add your own logic, tools and specific args
-- Modify `src/engineering_team_x/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
-```
-
-This command initializes the engineering_team_x Crew, assembling the agents and assigning them tasks as defined in your configuration.
-
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
-
-## Understanding Your Crew
-
-The engineering_team_x Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
-
-## Support
-
-For support, questions, or feedback regarding the EngineeringTeamX Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
+```text
+engineering_team_x/
+├── knowledge/          # Knowledge base files for agents
+├── output/             # Output directory for generated code & tests
+│   ├── Architecture_Plan.json
+│   ├── account.py
+│   ├── auth.py
+│   ├── test_account.py
+│   ├── test_auth.py
+│   └── app.py
+├── src/                # Core CrewAI source code & workflows
+├── tests/              # Project test suites
+├── .gitignore          # Excluded environment and build files
+├── AGENTS.md           # Agent roles and configuration details
+├── NOTES.md            # Troubleshooting guide & technical notes
+├── pyproject.toml      # Project dependencies and setup
+└── README.md           # Project documentation
